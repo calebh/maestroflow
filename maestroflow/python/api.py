@@ -8,6 +8,15 @@ import signal
 import sys
 import os
 import base64
+import socket
+
+def get_open_port():        
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s.bind(("",0))
+    s.listen(1)
+    port = s.getsockname()[1]
+    s.close()
+    return port
 
 def image(png_filename):
     with open(png_filename, "rb") as image_file:
@@ -29,7 +38,9 @@ def server(host, port, loop_queue, result_queue):
     web.run_app(app, host=host, port=port)
 
 class Application:
-    def __init__(self, port, name, logo, host="127.0.0.1", maestroflow_addr="http://127.0.0.1:54921/"):
+    def __init__(self, name, logo, host="127.0.0.1", port=None, maestroflow_addr="http://127.0.0.1:54921/"):
+        if port is None:
+            port = get_open_port()
         self.port = port
         self.name = name
         self.logo = logo
@@ -91,7 +102,7 @@ class Source:
     def __init__(self, application, path, type_name):
         self.application = application
         self.application.add_source(self)
-        self.path = path
+        self.path = self.application.name + "." + path
         self.type_name = type_name
         self.application.send({'commType': 'SourceAnnouncement', 'path': self.path, 'typeName': self.type_name})
     
@@ -101,7 +112,7 @@ class Source:
 #http://127.0.0.1:54921/?type=SinkAnnouncement&application=foobar&path=foobarqux&typeName=color
 class Sink:
     def __init__(self, application, path, type_name):
-        self.path = path
+        self.path = application.name + "." + path
         self.application = application
         self.application.add_sink(self)
         self.type_name = type_name

@@ -1,0 +1,19 @@
+histogram-icon.png:
+Icon from Wikimedia Commons, created by user Qwfp and Pbroks13
+https://en.m.wikipedia.org/wiki/File:Fisher_iris_versicolor_sepalwidth.svg
+
+colorpicker-icon.ong:
+Icon from Wikimedia Commons under the public domain
+https://en.wikipedia.org/wiki/File:RGB_color_wheel_72.svg
+
+texteditor-icon.png
+Icon from Wikimedia Commons under the public domaiin
+https://en.wikipedia.org/wiki/File:Accessories-text-editor.svg
+
+unicorn-icon.png
+Icon under the public domain
+https://www.publicdomainpictures.net/en/view-image.php?image=192129&picture=unicorn-icon
+
+twirl-icon.png
+Icon under CC0 license
+https://pixabay.com/en/protein-icon-protein-helix-2887050/

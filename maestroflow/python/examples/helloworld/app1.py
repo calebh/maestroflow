@@ -1,10 +1,10 @@
 import maestroflow.python.api as mf
 import signal
 
-# Create a new application running on port 13377 called app1, and use the given icon
-app = mf.Application(13377, "app1", mf.image('../twirl-icon.png'))
-# Create a source called app1.source which broadcasts data of type text
-source = mf.Source(app, "app1.source", "text")
+# Create a new application called app1, and use the twirl icon
+app = mf.Application("app1", mf.image('../twirl-icon.png'))
+# Create a source called input which broadcasts data of type text
+input_source = mf.Source(app, "input", "text")
 
 # A signal to kill the program should also kill the MaestroFlow application
 def signal_handler(sig, frame):
@@ -15,4 +15,6 @@ signal.signal(signal.SIGINT, signal_handler)
 while True:
     txt = input("Enter some text to send: ")
     # Notify MaestroFlow that we got an input
-    source.notify(txt)
+    input_source.notify(txt)
+    # For the MaestroFlow sinks to function, we have to occasionally call poll
+    app.poll()
