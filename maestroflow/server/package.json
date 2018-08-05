@@ -1,0 +1,33 @@
+{
+  "name": "maestroflow-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/calebh/maestroflow.git"
+  },
+  "keywords": [
+    "pipes",
+    "composition",
+    "program"
+  ],
+  "author": "Caleb Helbling",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/calebh/maestroflow/issues"
+  },
+  "homepage": "https://github.com/calebh/maestroflow#readme",
+  "devDependencies": {
+    "electron": "^2.0.6"
+  },
+  "dependencies": {
+    "cytoscape": "^3.2.15",
+    "cytoscape-edgehandles": "^3.4.0",
+    "express": "^4.16.3"
+  }
+}

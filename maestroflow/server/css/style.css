@@ -1,0 +1,98 @@
+#interface {
+    margin: 0px 0px 0px 0px;
+}
+
+/* TODO: Figure out a better way to do layout */
+
+#io {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    bottom: 0px;
+    width: 300px;
+    background-color: #838383;
+    color: white;
+    line-height: 1.2em;
+    overflow: scroll;
+}
+
+#io h1 {
+    font-family: sans-serif;
+    padding: 5px;
+    text-align: center;
+    font-size: 30px;
+    border-bottom-color: white;
+    border-bottom-style: dashed;
+    border-bottom-width: 3px;
+}
+
+#io #app-list {
+    margin-top: 10px;
+}
+
+#io .app-entry {
+    flex-direction: row;
+    display: flex;
+}
+
+#io .app-image {
+    display: flex;
+    width: 50px;
+    height: 50px;
+}
+
+#io .app-info-wrapper {
+    display: flex;
+    width: 225px;
+    margin-left: 25px;
+}
+
+#io .app-info {
+    display: flex;
+    flex-direction: column;
+}
+
+#io .app-info * {
+    display: flex;
+    flex-direction: column
+}
+
+#io .app-name {
+    margin-top: 10px;
+    height: 20px;
+    font-size: 20px;
+
+    /*
+    margin-top: 10px;
+    height: 20px;
+    line-height: 20px;
+    vertical-align: bottom;
+    width: 230px;
+    margin-left: 20px;
+    font-size: 20px;*/
+}
+
+#io .app-io {
+    margin-left: 25px;
+}
+
+#io .app-io li {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#io .app-io-label {
+    width: 175px;
+}
+
+#io .app-io ul {
+    margin-left: 25px;
+}
+
+#cy {
+    position: absolute;
+    left: 300px;
+    right: 0px;
+    bottom: 0px;
+    top: 0px;
+}

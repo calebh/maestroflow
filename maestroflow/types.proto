@@ -1,0 +1,32 @@
+// TODO: Move to a richer data format than protobufs. The ideal format should support things such as generics and recursion
+
+syntax = "proto3";
+
+message PlainText {
+    string text = 1;
+}
+
+message Vector3f {
+    float x = 1;
+    float y = 2;
+    float z = 3;
+}
+
+message Point3f {
+    float x = 1;
+    float y = 2;
+    float z = 3;
+}
+
+message Color {
+    uint32 r = 1;
+    uint32 g = 2;
+    uint32 b = 3;
+}
+
+// This format is row-major
+message Image {
+    uint32 width = 1;
+    uint32 height = 2;
+    repeated Color pixels = 3;
+}
