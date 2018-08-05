@@ -20,11 +20,9 @@ class Application {
     }
 
     handleEvent(event) {
-        console.log("handling event");
+        //console.log("handling event");
         if (event.application == this.name) {
-            console.log("alpha");
             if (event.path in this.sources) {
-                console.log("beta");
                 let source = this.sources[event.path];
                 source.handleEvent(event);
             }
