@@ -1,6 +1,7 @@
 import maestroflow.python.api as mf
 import signal
 import time
+import sys
 
 # Create a new application called app2, and use the unicorn icon
 app = mf.Application("app2", mf.image('../unicorn-icon.png'))
@@ -19,3 +20,4 @@ while True:
     # For the MaestroFlow sinks to function, we have to occasionally call poll
     app.poll()
     time.sleep(0.01)
+

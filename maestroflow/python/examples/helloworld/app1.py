@@ -1,5 +1,6 @@
 import maestroflow.python.api as mf
 import signal
+import sys
 
 # Create a new application called app1, and use the twirl icon
 app = mf.Application("app1", mf.image('../twirl-icon.png'))
@@ -18,3 +19,4 @@ while True:
     input_source.notify(txt)
     # For the MaestroFlow sinks to function, we have to occasionally call poll
     app.poll()
+

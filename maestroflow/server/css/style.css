@@ -101,3 +101,8 @@
     text-decoration: underline;
     cursor: pointer;
 }
+
+textarea {
+    font-size: 120%;
+    font-family: 'Consolas', 'Courier New', Courier, monospace'
+}

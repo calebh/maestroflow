@@ -19,7 +19,8 @@ class Transformer {
                     'text-halign': 'center',
                     'text-valign': 'center',
                     'text-background-color': '#a9d6f1',
-                    'shape': 'roundrectangle'
+                    'shape': 'roundrectangle',
+                    'width': '120px'
                 }
             }    
         ]);
@@ -27,16 +28,22 @@ class Transformer {
 
         this.node.on("click", (event) => this.clicked(event));
 
-        this.typeNameInput = document.createElement("input");
-        this.typeNameInput.setAttribute("type", "text");
-        this.typeNameInput.setAttribute("value", this.typeName);
-
         this.textareaWrapper = document.createElement("div");
         this.textareaWrapper.style.position = "absolute";
         this.textareaWrapper.style.left = "0";
         this.textareaWrapper.style.top = "0";
         this.textareaWrapper.style.display = "none";
         this.textareaWrapper.style.backgroundColor = "#a9d6f1";
+
+        this.nameInput = document.createElement("input");
+        this.nameInput.setAttribute("type", "text");
+        this.nameInput.setAttribute("value", this.name);
+        this.nameInput.setAttribute("placeholder", "Transformer name");
+
+        this.typeNameInput = document.createElement("input");
+        this.typeNameInput.setAttribute("type", "text");
+        this.typeNameInput.setAttribute("value", this.typeName);
+        this.typeNameInput.setAttribute("placeholder", "Transformer type");
 
         this.textarea = document.createElement("textarea");
         this.textarea.setAttribute("rows", "10");
@@ -47,6 +54,8 @@ class Transformer {
         this.closeButton.innerText = "close";
         this.closeButton.onclick = (event) => this.onClose(event);
 
+        this.textareaWrapper.appendChild(this.nameInput);
+        this.textareaWrapper.appendChild(document.createElement("br"));
         this.textareaWrapper.appendChild(this.typeNameInput);
         this.textareaWrapper.appendChild(document.createElement("br"));
         this.textareaWrapper.appendChild(this.textarea);
@@ -68,6 +77,7 @@ class Transformer {
 
     onClose(event) {
         this.textareaWrapper.style.display = "none";
+        this.name = this.nameInput.value;
         this.code = this.textarea.value;
         this.typeName = this.typeNameInput.value;
         this.f = eval(this.code);
