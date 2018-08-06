@@ -6,10 +6,10 @@ MaestroFlow is an interface for connecting programs together. It consists of a G
 
 ## Getting Started
 
-To start the MaestroFlow server, go to the maestroflow/server directory and run ``npm start``.
-To use the Python 3.6 API, add an entry to your ``PYTHONPATH`` to point to the folder containing the repository. The API can then be imported:
+To start the MaestroFlow server, go to the ``maestroflow/server`` directory and run ``npm start``.
+To use the Python 3.6 API, add an entry to your ``PYTHONPATH`` to point to the ``maestroflow/python`` folder. The API can then be imported:
 
-```import maestroflow.python.api as mf```
+```import maestroflow as mf```
 
 The Python APIs require the ``aiohttp`` and ``requests`` Python libraries, which can be installed with pip.
 

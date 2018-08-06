@@ -1,4 +1,4 @@
-import maestroflow.python.api as mf
+import maestroflow as mf
 from tkinter import * 
 import sys
 

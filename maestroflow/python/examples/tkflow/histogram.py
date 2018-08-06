@@ -1,4 +1,4 @@
-import maestroflow.python.api as mf
+import maestroflow as mf
 import matplotlib.pyplot as plt
 import matplotlib
 matplotlib.use('TkAgg')

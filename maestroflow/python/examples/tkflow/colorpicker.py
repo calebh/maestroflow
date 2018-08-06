@@ -1,7 +1,7 @@
 import tkinter as tk
 import tkinter.ttk as ttk
 from tkcolorpicker import askcolor
-import maestroflow.python.api as mf
+import maestroflow as mf
 
 # Create a new application called colorpicker, and use the twirl icon
 app = mf.Application("colorpicker", mf.image('../colorpicker-icon.png'))
