@@ -20,7 +20,6 @@ class Application {
     }
 
     handleEvent(event) {
-        //console.log("handling event");
         if (event.application == this.name) {
             if (event.path in this.sources) {
                 let source = this.sources[event.path];

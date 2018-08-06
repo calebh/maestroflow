@@ -15,7 +15,6 @@ class Sink {
     }
 
     notify(event) {
-        console.log("sending notification");
         request.post(this.addr, {
             qs: {
                 'commType': 'EventAnnouncement',

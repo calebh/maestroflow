@@ -6,13 +6,19 @@ const Event = require('./event.js');
 const Application = require('./application.js');
 const Source = require('./source.js');
 const Sink = require('./sink.js');
+const Transformer = require('./transformer.js');
 
 class MaestroFlow {
     constructor() {
         this.applications = {};
+        this.transformers = [];
         this.appList = document.getElementById("app-list");
+
         this.initializeNetwork();
         this.initializeCy();
+
+        this.addTransformerElem = document.getElementById("add-transformer");
+        this.addTransformerElem.onclick = (event) => this.addTransformer(event);
 
         this.refresh();
     }
@@ -122,7 +128,7 @@ class MaestroFlow {
                 let edge = addedEles[0];
                 // fired when edgehandles is done and elements are added
                 // Remove invalid edges
-                if (!(source instanceof Source && target instanceof Sink) || source.typeName !== target.typeName) {
+                if (!((source instanceof Source || source instanceof Transformer) && (target instanceof Sink || target instanceof Transformer)) || source.typeName !== target.typeName) {
                     edge.remove();
                 } else {
                     source.addTarget(target);
@@ -161,6 +167,11 @@ class MaestroFlow {
         this.eh = this.cy.edgehandles(defaults);
     }
 
+    addTransformer(event) {
+        let t = new Transformer(this.cy);
+        this.transformers.push(t);
+    }
+
     handleRequest(request) {
         console.log("Handling request", request);
         if ('commType' in request) {
@@ -194,7 +205,6 @@ class MaestroFlow {
                 var logo = '';
             }
             
-            console.log("appName", appName);
             let app = new Application(this.cy, appName, logo, addr);
             this.applications[appName] = app;
             this.refresh();

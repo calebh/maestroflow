@@ -96,3 +96,8 @@
     bottom: 0px;
     top: 0px;
 }
+
+#add-transformer {
+    text-decoration: underline;
+    cursor: pointer;
+}
