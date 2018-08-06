@@ -1,5 +1,7 @@
 # MaestroFlow - Composing Reactive Programs
 
+DEMO VIDEO: https://www.youtube.com/watch?v=lNhYYKiid9E
+
 MaestroFlow is an interface for connecting programs together. It consists of a GUI display which shows sources and sinks as nodes in a directed graph, along with a set of programs that use the MaestroFlow API. At the current moment the interface is an Electron application, and the only API is for Python.
 
 ## Getting Started
