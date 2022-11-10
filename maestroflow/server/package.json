@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/calebh/maestroflow#readme",
   "devDependencies": {
-    "electron": "^2.0.8"
+    "electron": "^18.3.7"
   },
   "dependencies": {
     "cytoscape": "^3.2.15",
