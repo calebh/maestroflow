@@ -28,6 +28,6 @@
   "dependencies": {
     "cytoscape": "^3.2.15",
     "cytoscape-edgehandles": "^3.4.0",
-    "express": "^4.16.3"
+    "express": "^4.17.3"
   }
 }
